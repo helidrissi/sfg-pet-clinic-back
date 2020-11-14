@@ -5,10 +5,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class IndexController {
+public class VetController {
 
-    @GetMapping("/index")
-    public String Index(){
-        return  "This is the pet clinic Index page";
+    @GetMapping("/vet")
+    public String vetIndex(){
+        return "this is the vet index";
     }
 }
