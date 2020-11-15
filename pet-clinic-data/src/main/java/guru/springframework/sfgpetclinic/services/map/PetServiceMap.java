@@ -4,9 +4,12 @@ package guru.springframework.sfgpetclinic.services.map;
 
 import guru.springframework.sfgpetclinic.model.Pet;
 import guru.springframework.sfgpetclinic.services.CrudSerive;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
+
+@Service
 public class PetServiceMap extends AbstractMapService<Pet,Long> implements CrudSerive<Pet,Long> {
     @Override
     public Set<Pet> finAll() {
@@ -24,8 +27,8 @@ public class PetServiceMap extends AbstractMapService<Pet,Long> implements CrudS
     }
 
     @Override
-    public Pet save(Long id,Pet object) {
-        return super.save(id,object);
+    public Pet save(Pet object) {
+        return super.save(object);
     }
 
     @Override
@@ -33,10 +36,7 @@ public class PetServiceMap extends AbstractMapService<Pet,Long> implements CrudS
         return super.findById(id);
     }
 
-    @Override
-    public Pet save(Pet object) {
-        return null;
-    }
+
 
 
 }
