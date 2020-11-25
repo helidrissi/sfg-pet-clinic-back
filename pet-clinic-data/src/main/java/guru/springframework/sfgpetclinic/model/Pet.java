@@ -7,6 +7,9 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.HashSet;
+import java.util.Set;
+
 @Data@AllArgsConstructor@NoArgsConstructor
 @Entity
 @Table(name = "pets")
@@ -19,8 +22,10 @@ public class Pet extends BaseEntity {
 
     @ManyToOne
     @JoinColumn(name = "owner_id")
-    private Owner owner;
+    private Owner owners;
 
     @Column(name = "birthdate")
     private LocalDate birthDate;
+    @OneToMany(mappedBy = "pets")
+    private Set<Visit> visits= new HashSet<>();
 }
