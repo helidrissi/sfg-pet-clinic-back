@@ -17,8 +17,7 @@ public class LoaderData implements CommandLineRunner {
     @Autowired
     private OwnerService ownerService;
 
-    @Autowired
-    private  VetService vetService;
+
 
 
 
@@ -40,20 +39,6 @@ public class LoaderData implements CommandLineRunner {
         ownerService.save(owner2);
 
         System.out.println("Owners as saved");
-
-        Vet vet1=new Vet();
-
-        vet1.setFirstName("ali");
-        vet1.setLastName("alami");
-        vetService.save(vet1);
-
-        Vet vet2=new Vet();
-
-        vet2.setFirstName("lina");
-        vet2.setLastName("alaoui");
-        vetService.save(vet2);
-
-        System.out.println("Vets as saved");
 
     }
 }

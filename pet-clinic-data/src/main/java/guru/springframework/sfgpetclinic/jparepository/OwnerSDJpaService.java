@@ -8,9 +8,7 @@ import guru.springframework.sfgpetclinic.services.OwnerService;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
-import java.util.HashSet;
-import java.util.Optional;
-import java.util.Set;
+import java.util.*;
 
 @Service
 @Profile("SpringData")
@@ -31,13 +29,16 @@ public class OwnerSDJpaService implements OwnerService {
         return ownerRepository.findByLastName(lastname);
     }
 
-    @Override
+   @Override
     public Set<Owner> finAll() {
 
         Set<Owner> owners= new HashSet<>();
         ownerRepository.findAll().forEach(owners::add);
         return owners;
     }
+
+
+
 
     @Override
     public Owner findById(Long aLong) {
@@ -51,6 +52,13 @@ public class OwnerSDJpaService implements OwnerService {
 
     @Override
     public Owner save(Owner object) {
+
+        System.out.println("#############################");
+        System.out.println("#############################");
+        System.out.println("#############################");
+        System.out.println("#############################");
+
+
         return ownerRepository.save(object);
     }
 
